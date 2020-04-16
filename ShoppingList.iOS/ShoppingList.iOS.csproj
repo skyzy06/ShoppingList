@@ -118,6 +118,10 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\3bar.png" />
     <BundleResource Include="Resources\3bar%402x.png" />
+    <ImageAsset Include="Assets.xcassets\shopping_basket.imageset\shopping_basket_1x.png" />
+    <ImageAsset Include="Assets.xcassets\shopping_basket.imageset\shopping_basket_2x.png" />
+    <ImageAsset Include="Assets.xcassets\shopping_basket.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\shopping_basket.imageset\shopping_basket_3x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

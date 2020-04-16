@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 using ShoppingList.Models;
 
@@ -11,18 +9,18 @@ namespace ShoppingList.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class NewItemPage : ContentPage
+    public partial class NewRecipePage : ContentPage
     {
-        public Item Item { get; set; }
+        public Ingredient Ingredient { get; set; }
 
-        public NewItemPage()
+        public NewRecipePage()
         {
             InitializeComponent();
 
-            Item = new Item
+            Ingredient = new Ingredient
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                Label = "Item name",
+                Quantity = 1
             };
 
             BindingContext = this;
@@ -30,7 +28,7 @@ namespace ShoppingList.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            MessagingCenter.Send(this, "AddItem", Ingredient);
             await Navigation.PopModalAsync();
         }
 

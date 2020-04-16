@@ -1,8 +1,5 @@
-﻿using System;
+﻿using ShoppingList.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using ShoppingList.Services;
-using ShoppingList.Views;
 
 namespace ShoppingList
 {
@@ -13,7 +10,6 @@ namespace ShoppingList
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
         }
 
