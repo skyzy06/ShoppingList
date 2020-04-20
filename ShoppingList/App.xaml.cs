@@ -1,10 +1,12 @@
-﻿using ShoppingList.Views;
+﻿using System;
+using ShoppingList.Views;
 using Xamarin.Forms;
 
 namespace ShoppingList
 {
     public partial class App : Application
     {
+        public EventHandler OnUseCustomTheme;
 
         public App()
         {
@@ -15,6 +17,11 @@ namespace ShoppingList
 
         protected override void OnStart()
         {
+            // apply the color theme
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                UseCustomTheme();
+            });
         }
 
         protected override void OnSleep()
@@ -24,5 +31,12 @@ namespace ShoppingList
         protected override void OnResume()
         {
         }
+
+        #region Theme
+        public void UseCustomTheme()
+        {
+            OnUseCustomTheme?.Invoke(Current, null);
+        }
+        #endregion
     }
 }

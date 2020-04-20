@@ -2,13 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cells="clr-namespace:ShoppingList.DataTemplates"
+             xmlns:resources="clr-namespace:ShoppingList.Resources"
              xmlns:viewModels="clr-namespace:ShoppingList.ViewModels"
              x:Class="ShoppingList.Views.MenuPage"
-             Title="Menu">
+             Style="{StaticResource menuContentPage}"
+             Title="{x:Static resources:AppResources.MenuTitle}">
 
     <ContentPage.BindingContext>
         <viewModels:MenuViewModel />
     </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Int32 x:Key="rowMenuHeight">60</x:Int32>
+
+            <Style x:Key="menuContentPage" TargetType="ContentPage" BasedOn="{StaticResource contentPageBase}">
+                <Setter Property="Padding">
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android" Value="0,40,0,0" />
+                    </OnPlatform>
+                </Setter>
+            </Style>
+
+            <Style x:Key="mainLayout" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+
+            <Style x:Key="menuItemListView" TargetType="ListView">
+                <Setter Property="SeparatorColor" Value="LightGray" />
+                <Setter Property="RowHeight" Value="{StaticResource rowMenuHeight}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.IconImageSource>
         <FileImageSource>
@@ -19,13 +44,20 @@
             </FileImageSource.File>
         </FileImageSource>
     </ContentPage.IconImageSource>
-    <StackLayout VerticalOptions="FillAndExpand">
-        <ListView ItemsSource="{Binding MenuItemList}" SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}" HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <cells:MenuCell />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource mainLayout}">
+            <ListView ItemsSource="{Binding MenuItemList}" SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}"
+                      Style="{StaticResource menuItemListView}">
+                <ListView.Footer>
+                    <StackLayout />
+                </ListView.Footer>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cells:MenuCell />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

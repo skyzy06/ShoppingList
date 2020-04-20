@@ -9,13 +9,13 @@ namespace ShoppingList.ViewModels
 {
     public class ShoppingListViewModel
     {
-        public string Title { get; }
         public ObservableCollection<Ingredient> Items { get; set; }
 
         public ShoppingListViewModel()
         {
-            Title = "Shopping List";
             Items = new ObservableCollection<Ingredient>();
+
+            Items.Add(new Ingredient { Label = "test avec un nom très très très long long long vraiment vraiment long et même beaucoup trop long", Quantity = 2, Weight = "0g" });
 
             MessagingCenter.Subscribe<NewRecipePage, Ingredient>(this, "AddItem", (obj, item) =>
             {

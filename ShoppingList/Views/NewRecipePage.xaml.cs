@@ -20,7 +20,8 @@ namespace ShoppingList.Views
             Ingredient = new Ingredient
             {
                 Label = "Item name",
-                Quantity = 1
+                Quantity = 1,
+                Weight = "100g"
             };
 
             BindingContext = this;

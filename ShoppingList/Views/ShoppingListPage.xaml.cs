@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using ShoppingList.ViewModels;
 using Xamarin.Forms;
 
 namespace ShoppingList.Views
@@ -10,13 +9,9 @@ namespace ShoppingList.Views
     [DesignTimeVisible(false)]
     public partial class ShoppingListPage : ContentPage
     {
-        ShoppingListViewModel viewModel;
-
         public ShoppingListPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new ShoppingListViewModel();
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)

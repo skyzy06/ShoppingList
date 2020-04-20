@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using ShoppingList.Models;
+using ShoppingList.Resources;
 using ShoppingList.Utils;
 using ShoppingList.Views;
 using Xamarin.Forms;
@@ -19,13 +20,13 @@ namespace ShoppingList.ViewModels
             {
                 new HomeMenuItem{
                     Id = 0,
-                    Title = "Shopping List",
+                    Title = AppResources.ShoppingListTitle,
                     IconSource = "shopping_basket.png",
                     TargetType = typeof(ShoppingListPage)
                 },
                 new HomeMenuItem{
                     Id = 1,
-                    Title = "New Recipe",
+                    Title = AppResources.NewRecipeTitle,
                     IconSource = "shopping_basket.png",
                     TargetType = typeof(NewRecipePage)
                 }

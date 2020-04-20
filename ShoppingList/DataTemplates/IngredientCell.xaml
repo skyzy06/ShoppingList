@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:converters="clr-namespace:ShoppingList.Converters"
+          xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
+          xmlns:resources="clr-namespace:ShoppingList.Resources"
+          x:Class="ShoppingList.DataTemplates.IngredientCell">
+
+
+    <ViewCell.View>
+        <Grid ColumnSpacing="0" Padding="5">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <converters:NegateBooleanConverter x:Key="inverteBool"/>
+
+                    <Style x:Key="ingredientName" TargetType="Label">
+                        <Setter Property="FontSize" Value="Body"/>
+                        <Setter Property="Grid.Column" Value="0"/>
+                        <Setter Property="Grid.ColumnSpan" Value="3"/>
+                        <Setter Property="Grid.Row" Value="0"/>
+                        <Setter Property="LineBreakMode" Value="TailTruncation"/>
+                        <Setter Property="VerticalOptions" Value="Center"/>
+                    </Style>
+
+                    <Style x:Key="deleteButton" TargetType="Button">
+                        <Setter Property="BackgroundColor" Value="{StaticResource appMainDarkColor}"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                        <Setter Property="Grid.Column" Value="3"/>
+                        <Setter Property="Grid.Row" Value="0"/>
+                        <Setter Property="HorizontalOptions" Value="End"/>
+                        <Setter Property="Padding">
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="Android" Value="0"/>
+                            </OnPlatform>
+                        </Setter>
+                        <Setter Property="WidthRequest" Value="30"/>
+                        <Setter Property="TextColor" Value="White"/>
+                    </Style>
+
+                    <Style x:Key="switchLayout" TargetType="StackLayout">
+                        <Setter Property="Orientation" Value="Horizontal"/>
+                        <Setter Property="Grid.Column" Value="0"/>
+                        <Setter Property="Grid.ColumnSpan" Value="2"/>
+                        <Setter Property="Grid.Row" Value="1"/>
+
+                    </Style>
+
+                    <Style x:Key="switchLabel" TargetType="Label">
+                        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                        <Setter Property="VerticalTextAlignment" Value="Center"/>
+                    </Style>
+
+                    <Style x:Key="switchMeasure" TargetType="Switch">
+                        <Setter Property="OnColor" Value="LightGray"/>
+                        <Setter Property="VerticalOptions" Value="Center"/>
+                    </Style>
+
+                    <Style x:Key="measureLayout" TargetType="StackLayout">
+                        <Setter Property="Grid.Column" Value="2"/>
+                        <Setter Property="Grid.ColumnSpan" Value="2"/>
+                        <Setter Property="Grid.Row" Value="1"/>
+                        <Setter Property="Padding" Value="0,5,0,0"/>
+                    </Style>
+
+                    <Style x:Key="quantityInput" TargetType="numeric:SfNumericUpDown">
+                        <Setter Property="HeightRequest" Value="30"/>
+                        <Setter Property="MaximumDecimalDigits" Value="0"/>
+                    </Style>
+
+                    <Style x:Key="weightInput" TargetType="Entry">
+                        <Setter Property="HeightRequest" Value="30"/>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="{Binding Label}" Style="{StaticResource ingredientName}"/>
+
+            <Button Text="X" Style="{StaticResource deleteButton}"/>
+
+            <StackLayout Style="{StaticResource switchLayout}">
+                <Label Text="{Static resources:AppResources.QuantitySwitchLabel}" Style="{StaticResource switchLabel}"/>
+                <Switch x:Name="measureType" Style="{StaticResource switchMeasure}"/>
+                <Label Text="{Static resources:AppResources.WeightSwitchLabel}" Style="{StaticResource switchLabel}"/>
+            </StackLayout>
+
+            <StackLayout Style="{StaticResource measureLayout}">
+                <numeric:SfNumericUpDown Value="{Binding Quantity}" IsVisible="{Binding Source={x:Reference measureType}, Path=IsToggled, Converter={StaticResource inverteBool}}" Style="{StaticResource quantityInput}"/>
+                <Entry Text="{Binding Weight}" IsVisible="{Binding Source={x:Reference measureType}, Path=IsToggled}" Style="{StaticResource weightInput}"/>
+            </StackLayout>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>
