@@ -15,25 +15,62 @@
         <ResourceDictionary>
 
             <Style x:Key="ingredientListView" TargetType="ListView">
+                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,0,1,1"/>
+                <Setter Property="AbsoluteLayout.LayoutFlags" Value="All"/>
                 <Setter Property="HasUnevenRows" Value="True"/>
-                <Setter Property="SeparatorColor" Value="LightGray" />
+                <Setter Property="SeparatorColor" Value="LightGray"/>
+            </Style>
+
+            <Style x:Key="popupContainer" TargetType="ContentView">
+                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,0,1,1"/>
+                <Setter Property="AbsoluteLayout.LayoutFlags" Value="All"/>
+                <Setter Property="BackgroundColor" Value="#C0808080"/>
+                <Setter Property="Padding" Value="25"/>
+            </Style>
+
+            <Style x:Key="PopupLayout" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Padding" Value="15, 25"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="PopupButtonsLayout" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal"/>
+            </Style>
+            <Style x:Key="PopupButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="TextColor" Value="{StaticResource appAccentColor}"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+        <ToolbarItem Text="{x:Static resources:AppResources.AddIngredientButton}" Command="{Binding OpenPopup}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Items}" Style="{StaticResource ingredientListView}">
-            <ListView.Footer>
-                <StackLayout/>
-            </ListView.Footer>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <cells:IngredientCell />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <AbsoluteLayout>
+            <ListView ItemsSource="{Binding Ingredients}" Style="{StaticResource ingredientListView}">
+                <ListView.Footer>
+                    <StackLayout/>
+                </ListView.Footer>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cells:IngredientCell />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ContentView IsVisible="{Binding PopupVisible}" Style="{StaticResource popupContainer}">
+                <StackLayout Style="{StaticResource PopupLayout}">
+                    <Label Text="{x:Static resources:AppResources.PopupTitle}" Style="{StaticResource title}"/>
+                    <Entry Text="{Binding NewIngredientName}" Placeholder="{x:Static resources:AppResources.PopupPlaceHolder}"/>
+                    <StackLayout Style="{StaticResource PopupButtonsLayout}">
+                        <Button Text="{x:Static resources:AppResources.CancelButton}" Command="{Binding ClosePopup}" Style="{StaticResource PopupButton}"/>
+                        <Button Text="{x:Static resources:AppResources.ConfirmButton}" Command="{Binding AddIngredient}" Style="{StaticResource PopupButton}"/>
+                    </StackLayout>
+                </StackLayout>
+            </ContentView>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

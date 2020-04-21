@@ -20,7 +20,24 @@
         <value>Nouvelle recette</value>    
     </data>
     <!--  #EndRegion: Page title  -->
-     <!--  #Region: Ingredient cell  -->
+    <!--  #Region: Shopping list page  -->
+    <data name="AddIngredientButton" xml:space="preserve">
+        <value>Ajouter</value>
+    </data>
+     <data name="PopupTitle" xml:space="preserve">
+        <value>Ajouter un ingrédient</value>
+    </data>
+    <data name="PopupPlaceHolder" xml:space="preserve">
+        <value>Nom de l'ingrédient'</value>
+    </data>
+    <data name="CancelButton" xml:space="preserve">
+        <value>Annuler</value>
+    </data>
+    <data name="ConfirmButton" xml:space="preserve">
+        <value>Confirmer</value>
+    </data>
+    <!--  #EndRegion: Shopping list page  -->
+    <!--  #Region: Ingredient cell  -->
     <data name="QuantitySwitchLabel" xml:space="preserve">
         <value>Quantité</value>
     </data>

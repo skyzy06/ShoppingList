@@ -59,6 +59,36 @@ namespace ShoppingList.Resources {
             }
         }
         
+        internal static string AddIngredientButton {
+            get {
+                return ResourceManager.GetString("AddIngredientButton", resourceCulture);
+            }
+        }
+        
+        internal static string PopupTitle {
+            get {
+                return ResourceManager.GetString("PopupTitle", resourceCulture);
+            }
+        }
+        
+        internal static string PopupPlaceHolder {
+            get {
+                return ResourceManager.GetString("PopupPlaceHolder", resourceCulture);
+            }
+        }
+        
+        internal static string CancelButton {
+            get {
+                return ResourceManager.GetString("CancelButton", resourceCulture);
+            }
+        }
+        
+        internal static string ConfirmButton {
+            get {
+                return ResourceManager.GetString("ConfirmButton", resourceCulture);
+            }
+        }
+        
         internal static string QuantitySwitchLabel {
             get {
                 return ResourceManager.GetString("QuantitySwitchLabel", resourceCulture);

@@ -1,10 +1,8 @@
-﻿using System;
-using ShoppingList.Models;
-using ShoppingList.Utils;
+﻿using ShoppingList.Models;
 
 namespace ShoppingList.ViewModels
 {
-    public class NewRecipeViewModel : NotifyPropertyChanged
+    public class NewRecipeViewModel : BaseViewModel
     {
         #region Properties
         public string Title

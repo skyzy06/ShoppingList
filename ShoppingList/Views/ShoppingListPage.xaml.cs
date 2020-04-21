@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace ShoppingList.Views
@@ -12,11 +11,6 @@ namespace ShoppingList.Views
         public ShoppingListPage()
         {
             InitializeComponent();
-        }
-
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewRecipePage()));
         }
     }
 }

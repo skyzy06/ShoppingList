@@ -3,17 +3,13 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using ShoppingList.Models;
 using ShoppingList.Resources;
-using ShoppingList.Utils;
 using ShoppingList.Views;
 using Xamarin.Forms;
 
 namespace ShoppingList.ViewModels
 {
-    public class MenuViewModel : NotifyPropertyChanged
+    public class MenuViewModel : BaseViewModel
     {
-        // Reference to the MasterDetailPage to change the current page
-        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
-
         public MenuViewModel()
         {
             MenuItemList = new ObservableCollection<HomeMenuItem>
