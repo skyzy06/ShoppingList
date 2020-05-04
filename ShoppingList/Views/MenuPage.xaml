@@ -28,8 +28,7 @@
                 <Setter Property="BackgroundColor" Value="White"/>
             </Style>
 
-            <Style x:Key="menuItemListView" TargetType="ListView">
-                <Setter Property="SeparatorColor" Value="LightGray" />
+            <Style x:Key="menuItemListView" TargetType="ListView" BasedOn="{StaticResource lstView}">
                 <Setter Property="RowHeight" Value="{StaticResource rowMenuHeight}" />
             </Style>
         </ResourceDictionary>

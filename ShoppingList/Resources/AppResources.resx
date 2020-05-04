@@ -19,6 +19,9 @@
     <data name="ShoppingListTitle" xml:space="preserve">
         <value>Shopping list</value>
     </data>
+    <data name="RecipeListTitle" xml:space="preserve">
+        <value>Recipe list</value>
+    </data>
     <data name="NewRecipeTitle" xml:space="preserve">
         <value>New recipe</value>    
     </data>
@@ -26,6 +29,9 @@
     <!--  #Region: Shopping list page  -->
     <data name="AddIngredientButton" xml:space="preserve">
         <value>Add</value>
+    </data>
+    <data name="EmptyShoppingListMessage" xml:space="preserve">
+        <value>Unfortunately, the fridge seems to be empty. Add some ingredients to fill it.</value>
     </data>
     <data name="PopupTitle" xml:space="preserve">
         <value>Add an ingredient</value>

@@ -16,6 +16,9 @@
     <data name="ShoppingListTitle" xml:space="preserve">
         <value>Liste de courses</value>
     </data>
+    <data name="RecipeListTitle" xml:space="preserve">
+        <value>Liste de recettes</value>
+    </data>
     <data name="NewRecipeTitle" xml:space="preserve">
         <value>Nouvelle recette</value>    
     </data>
@@ -24,11 +27,14 @@
     <data name="AddIngredientButton" xml:space="preserve">
         <value>Ajouter</value>
     </data>
+     <data name="EmptyShoppingListMessage" xml:space="preserve">
+        <value>Malheureusement, le réfrigérateur semble vide. Ajoutez quelques ingrédients pour le remplir.</value>
+    </data>
      <data name="PopupTitle" xml:space="preserve">
         <value>Ajouter un ingrédient</value>
     </data>
     <data name="PopupPlaceHolder" xml:space="preserve">
-        <value>Nom de l'ingrédient'</value>
+        <value>Nom de l'ingrédient</value>
     </data>
     <data name="CancelButton" xml:space="preserve">
         <value>Annuler</value>

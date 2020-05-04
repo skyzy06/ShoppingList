@@ -122,6 +122,18 @@
     <ImageAsset Include="Assets.xcassets\shopping_basket.imageset\shopping_basket_2x.png" />
     <ImageAsset Include="Assets.xcassets\shopping_basket.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\shopping_basket.imageset\shopping_basket_3x.png" />
+    <ImageAsset Include="Assets.xcassets\chevron_right.imageset\chevron_right_1x.png" />
+    <ImageAsset Include="Assets.xcassets\chevron_right.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\chevron_right.imageset\chevron_right_3x.png" />
+    <ImageAsset Include="Assets.xcassets\chevron_right.imageset\chevron_right_2x.png" />
+    <ImageAsset Include="Assets.xcassets\description.imageset\description_3x.png" />
+    <ImageAsset Include="Assets.xcassets\description.imageset\description_2x.png" />
+    <ImageAsset Include="Assets.xcassets\description.imageset\description_1x.png" />
+    <ImageAsset Include="Assets.xcassets\description.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\mood_bad.imageset\mood_bad_2x.png" />
+    <ImageAsset Include="Assets.xcassets\mood_bad.imageset\mood_bad_3x.png" />
+    <ImageAsset Include="Assets.xcassets\mood_bad.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\mood_bad.imageset\mood_bad_1x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -132,8 +144,8 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3" />
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

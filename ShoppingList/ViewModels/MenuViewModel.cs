@@ -22,9 +22,9 @@ namespace ShoppingList.ViewModels
                 },
                 new HomeMenuItem{
                     Id = 1,
-                    Title = AppResources.NewRecipeTitle,
-                    IconSource = "shopping_basket.png",
-                    TargetType = typeof(NewRecipePage)
+                    Title = AppResources.RecipeListTitle,
+                    IconSource = "description.png",
+                    TargetType = typeof(RecipeListPage)
                 }
             };
         }

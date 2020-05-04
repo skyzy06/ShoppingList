@@ -69,6 +69,7 @@
 
                     <Style x:Key="weightInput" TargetType="Entry">
                         <Setter Property="HeightRequest" Value="30"/>
+                        <Setter Property="Keyboard" Value="Text"/>
                     </Style>
                 </ResourceDictionary>
             </Grid.Resources>

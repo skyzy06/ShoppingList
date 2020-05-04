@@ -20,23 +20,23 @@
 
             <!-- #Region : Base style -->
             <Style x:Key="title" TargetType="Label">
-                <Setter Property="FontSize" Value="24" />
                 <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="24" />
             </Style>
             <Style x:Key="h1" TargetType="Label">
-                <Setter Property="FontSize" Value="18" />
                 <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="18" />
             </Style>
             <Style x:Key="h2" TargetType="Label">
-                <Setter Property="FontSize" Value="14" />
                 <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="14" />
             </Style>
             <Style x:Key="normalText" TargetType="Label">
                 <Setter Property="FontSize" Value="12" />
             </Style>
             <Style x:Key="iconBase" TargetType="Image">
-                <Setter Property="Opacity" Value="0.6" />
                 <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="Opacity" Value="0.6" />
             </Style>
             <Style x:Key="contentPageBase" TargetType="ContentPage">
                 <Setter Property="BackgroundColor">
@@ -47,8 +47,8 @@
                 </Setter>
             </Style>
             <Style x:Key="lstView" TargetType="ListView">
-                <Setter Property="SeparatorColor" Value="Transparent" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="SeparatorColor" Value="LightGray" />
             </Style>
             <!-- #EndRegion -->
         </ResourceDictionary>

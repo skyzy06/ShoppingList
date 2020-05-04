@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:ShoppingList.Resources"
+             xmlns:viewModels="clr-namespace:ShoppingList.ViewModels"
+             x:Class="ShoppingList.Views.RecipeListPage"
+             Title="{x:Static resources:AppResources.RecipeListTitle}">
+
+    <ContentPage.BindingContext>
+        <viewModels:RecipeListViewModel/>
+    </ContentPage.BindingContext>
+
+    <ListView ItemsSource="{Binding Recipes}" SelectedItem="{Binding SelectedRecipe}">
+        <!--Built in Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding .}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <!--Custom View Cells-->
+        <!--
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+            <Label Text="{Binding Text}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="{Binding Detail}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    -->
+    </ListView>
+</ContentPage>

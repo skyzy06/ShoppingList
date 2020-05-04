@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using ShoppingList.Models;
-using ShoppingList.Views;
 using Xamarin.Forms;
 
 namespace ShoppingList.ViewModels
@@ -11,27 +10,30 @@ namespace ShoppingList.ViewModels
 
         public ShoppingListViewModel()
         {
-            //@TODO: remove, mock
-            Ingredients = new ObservableCollection<Ingredient>();
-            Ingredients.Add(new Ingredient { Label = "test avec un nom très très très long long long vraiment vraiment long et même beaucoup trop long", Quantity = 2, Weight = "0g" });
-            //@ENDTODO: remove, mock
-
             OpenPopup = new Command(OpenPopupCommand);
             ClosePopup = new Command(ClosePopupCommand);
             AddIngredient = new Command(AddIngredientCommand);
+            IsIngredientsEmpty = true;
 
-            MessagingCenter.Subscribe<NewRecipePage, Ingredient>(this, "AddItem", (obj, item) =>
-            {
-                var newItem = item as Ingredient;
-                Ingredients.Add(newItem);
-            });
+            //MessagingCenter.Subscribe<NewRecipePage, Ingredient>(this, "AddItem", (obj, item) =>
+            //{
+            //    var newItem = item as Ingredient;
+            //    Ingredients.Add(newItem);
+            //});
         }
 
         #region Properties
         ObservableCollection<Ingredient> ingredients;
         public ObservableCollection<Ingredient> Ingredients
         {
-            get => ingredients;
+            get
+            {
+                if(ingredients == null)
+                {
+                    ingredients = new ObservableCollection<Ingredient>();
+                }
+                return ingredients;
+            }
             set
             {
                 ingredients = value;
@@ -57,6 +59,17 @@ namespace ShoppingList.ViewModels
             set
             {
                 newIngredientName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        bool isIngredientsEmpty;
+        public bool IsIngredientsEmpty
+        {
+            get => isIngredientsEmpty;
+            set
+            {
+                isIngredientsEmpty = value;
                 OnPropertyChanged();
             }
         }
@@ -88,6 +101,7 @@ namespace ShoppingList.ViewModels
                     Weight = "0g"
                 });
             }
+            IsIngredientsEmpty = false;
             PopupVisible = false;
         }
         #endregion

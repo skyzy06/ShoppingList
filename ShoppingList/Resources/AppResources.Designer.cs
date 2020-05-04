@@ -59,6 +59,12 @@ namespace ShoppingList.Resources {
             }
         }
         
+        internal static string RecipeListTitle {
+            get {
+                return ResourceManager.GetString("RecipeListTitle", resourceCulture);
+            }
+        }
+        
         internal static string NewRecipeTitle {
             get {
                 return ResourceManager.GetString("NewRecipeTitle", resourceCulture);
@@ -68,6 +74,12 @@ namespace ShoppingList.Resources {
         internal static string AddIngredientButton {
             get {
                 return ResourceManager.GetString("AddIngredientButton", resourceCulture);
+            }
+        }
+        
+        internal static string EmptyShoppingListMessage {
+            get {
+                return ResourceManager.GetString("EmptyShoppingListMessage", resourceCulture);
             }
         }
         
