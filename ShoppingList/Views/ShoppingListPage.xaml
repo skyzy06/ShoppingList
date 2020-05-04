@@ -39,16 +39,16 @@
                 <Setter Property="BackgroundColor" Value="#C0808080"/>
                 <Setter Property="Padding" Value="25"/>
             </Style>
-            <Style x:Key="PopupLayout" TargetType="StackLayout">
+            <Style x:Key="popupLayout" TargetType="StackLayout">
                 <Setter Property="BackgroundColor" Value="White"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="Padding" Value="15, 25"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
-            <Style x:Key="PopupButtonsLayout" TargetType="StackLayout">
+            <Style x:Key="popupButtonsLayout" TargetType="StackLayout">
                 <Setter Property="Orientation" Value="Horizontal"/>
             </Style>
-            <Style x:Key="PopupButton" TargetType="Button">
+            <Style x:Key="popupButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="White"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="TextColor" Value="{StaticResource appAccentColor}"/>
@@ -80,10 +80,10 @@
             <ContentView IsVisible="{Binding PopupVisible}" Style="{StaticResource popupContainer}">
                 <StackLayout Style="{StaticResource PopupLayout}">
                     <Label Text="{x:Static resources:AppResources.PopupTitle}" Style="{StaticResource title}"/>
-                    <Entry Text="{Binding NewIngredientName}" Placeholder="{x:Static resources:AppResources.PopupPlaceHolder}"/>
-                    <StackLayout Style="{StaticResource PopupButtonsLayout}">
-                        <Button Text="{x:Static resources:AppResources.CancelButton}" Command="{Binding ClosePopup}" Style="{StaticResource PopupButton}"/>
-                        <Button Text="{x:Static resources:AppResources.ConfirmButton}" Command="{Binding AddIngredient}" Style="{StaticResource PopupButton}"/>
+                    <Entry Text="{Binding NewIngredientName}" Placeholder="{x:Static resources:AppResources.popupPlaceHolder}"/>
+                    <StackLayout Style="{StaticResource popupButtonsLayout}">
+                        <Button Text="{x:Static resources:AppResources.CancelButton}" Command="{Binding ClosePopup}" Style="{StaticResource popupButton}"/>
+                        <Button Text="{x:Static resources:AppResources.ConfirmButton}" Command="{Binding AddIngredient}" Style="{StaticResource popupButton}"/>
                     </StackLayout>
                 </StackLayout>
             </ContentView>
